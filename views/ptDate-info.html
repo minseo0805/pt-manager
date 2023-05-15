@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>NodeJS: {{title}}</title>
+</head>
+
+<body>
+    <p>
+        
+    </p>
+    <p>
+        PT 회원 일정 추가하기<br>
+        {% for ptId in pts %}
+        <a href="http://localhost:{{port}}/ptDate/create/{{ptId}}">http://localhost:{{port}}/ptDate/{{ptId}}</a><br>
+        {% endfor %}
+    </p>
+    <p>
+        PT 회원 일정 조회<br>
+        {% for ptId in pts %}
+        <a href="http://localhost:{{port}}/ptDate/info/{{ptId}}">http://localhost:{{port}}/ptDate/{{ptId}}</a><br>
+        {% endfor %}
+    </p>
+</body>
+
+</html>

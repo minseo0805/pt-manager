@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>NodeJS: {{title}}</title>
+</head>
+
+<body>
+    <p>
+        <form id="form" action="create" method="post">
+            회원 정보 등록<br>
+            <input type="text" name="name" placeholder="이름" /><br>
+            <input type="text" name="phone" placeholder="전화번호" /><br>
+            <input type="text" name="date" placeholder="등록일" /><br>
+            <button type="submit">전송</button>
+        </form>
+    </p>
+
+    <p>
+        회원 정보 조회<br>
+        {% for user in users %}
+            <a href="http://localhost:{{port}}/user/info/{{user.userId}}">{{user.name}}, {{user.phone}}</a><br>
+        {% endfor %}
+    </p>
+
+    <p>
+        회원 정보 수정<br>
+        {% for user in users %}
+            <a href="http://localhost:{{port}}/user/update/{{user.userId}}">{{user.name}}, {{user.phone}}</a><br>
+        {% endfor %}
+    </p>
+
+    <p>
+        회원 정보 삭제<br>
+        {% for user in users %}
+            <a href="http://localhost:{{port}}/user/delete/{{user.userId}}">{{user.name}}, {{user.phone}}</a><br>
+        {% endfor %}
+    </p>    
+</body>
+
+</html>
